@@ -43,11 +43,6 @@ class TicTakToe
     {
         $session = Yii::$app->session;
         $session->open();
-        /*if (empty($this->idBoard)) {
-            $this->idBoard = session_id();
-        }*/
-
-
         #Генерируем id стола для примера
         $json['id'] = MD5(time());
         $_SESSION['games'][$json['id']] = [
@@ -59,7 +54,6 @@ class TicTakToe
             $json['message'] = 'Первый ход выполнил сервер';
         }
 
-        //r($_SESSION);
         return (json_encode($json));
     }
 
